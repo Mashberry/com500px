@@ -1,0 +1,7 @@
+<resources>
+    <style name="AppTheme" parent="AppBaseTheme"	/>
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar"	/>
+    
+    <style name="FullScreen" parent="FullScreenTheme"	/>
+    <style name="FullScreenTheme" parent="android:Theme.Translucent.NoTitleBar.Fullscreen"	/>
+</resources>

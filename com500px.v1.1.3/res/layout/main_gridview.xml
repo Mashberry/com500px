@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"	>
+	
+	<ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/icon"	/>
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"	>
+
+	    <LinearLayout
+	        android:orientation="vertical"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="bottom"
+	        android:paddingLeft="2dp"
+	        android:paddingRight="2dp"
+	        android:paddingBottom="2dp"
+	        android:background="#64646464"	>
+	        <TextView 
+	            android:id="@+id/image_title"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Image_Title"
+	            android:textSize="12dp"
+	            android:textColor="#e9e9e9"
+	            android:singleLine="true"	/>
+	        
+		    <LinearLayout
+		        android:orientation="horizontal"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content">
+		        <ImageView
+		            android:id="@+id/image_pimg"
+		            android:layout_width="12dp"
+		            android:layout_height="12dp"
+		            android:layout_gravity="bottom"
+		            android:scaleType="center"
+		            android:src="@drawable/icon"	/>
+		        
+		        <TextView 
+		            android:id="@+id/image_pid"
+		            android:layout_width="0dp"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="3dp"
+		            android:layout_weight="1"
+		            android:layout_gravity="bottom"
+		            android:text="Image_Personal_Id"
+		            android:textSize="10dp"
+		            android:textColor="#e9e9e9"
+	            	android:singleLine="true"	/>
+		        
+		        <TextView 
+		            android:id="@+id/image_rating"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_gravity="right|bottom"
+		            android:layout_marginLeft="3dp"
+		            android:text="100.0"
+		            android:textSize="12dp"
+		            android:textColor="#ffffff"	/>
+	        </LinearLayout>
+	    </LinearLayout>
+	</LinearLayout>
+</FrameLayout>

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/info_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#dd383838" >
+
+    <ScrollView 
+        android:id="@+id/info_scroll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"	>
+        <LinearLayout 
+	        android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"	>
+            
+            <!-- 제목 아이디 -->
+			<LinearLayout
+		        android:orientation="vertical"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"	>
+		        <TextView 
+		            android:id="@+id/detail_name"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:maxLines="2"
+		            android:text="DETAIL_Title"
+		            android:textSize="24dp"
+		            android:textColor="#ffffff"	/>
+		        
+			    <LinearLayout
+			        android:orientation="horizontal"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"	>
+			        <ImageView
+			            android:id="@+id/detail_userpic"
+			            android:layout_width="50dp"
+			            android:layout_height="50dp"
+			            android:layout_marginTop="5dp"
+			            android:scaleType="fitCenter"
+			            android:src="@drawable/icon"	/>
+			        
+				    <LinearLayout
+				        android:orientation="vertical"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+			            android:layout_marginLeft="3dp"
+				        android:gravity="center_vertical"	>
+				        <TextView 
+				            android:id="@+id/detail_user_name"
+				            android:layout_width="wrap_content"
+				            android:layout_height="match_parent"
+				            android:layout_weight="1"
+				            android:text="Detail_USER_Id"
+				            android:textSize="18dp"
+				            android:textColor="#ffffff"
+			            	android:singleLine="true"	/>
+				        <TextView 
+				            android:id="@+id/detail_location"
+				            android:layout_width="wrap_content"
+				            android:layout_height="match_parent"
+				            android:layout_weight="1"
+				            android:text="Detail_USER_Location"
+				            android:textSize="15dp"
+				            android:textColor="#e9e9e9"
+			            	android:singleLine="true"	/>
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+            <!-- 제목 아이디 끝 -->
+            
+            <!-- 점수 및 조회수 -->
+			<LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="12dp"
+	            android:gravity="center"	>
+		        <TextView 
+		            android:id="@+id/detail_rating"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="100.0"
+		            android:textSize="18dp"
+		            android:textColor="#ffffff"
+		           	android:textStyle="bold"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+		        <TextView 
+		            android:id="@+id/detail_times_viewed"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="10000"
+		            android:textSize="18dp"
+		            android:textColor="#ffffff"
+		           	android:textStyle="bold"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+		        <TextView 
+		            android:id="@+id/detail_votes"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="10000"
+		            android:textSize="18dp"
+		            android:textColor="#ffffff"
+		           	android:textStyle="bold"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+		        <TextView 
+		            android:id="@+id/detail_favorites"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="10000"
+		            android:textSize="18dp"
+		            android:textColor="#ffffff"
+		           	android:textStyle="bold"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+			</LinearLayout>
+            <!-- 점수 및 조회수 끝-->
+            
+            <!-- 점수 및 조회수 텍스트 -->
+			<LinearLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"	>
+		        <TextView 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="Rating"
+		            android:textSize="12dp"
+		            android:textColor="#e9e9e9"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+		        <TextView 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="Views"
+		            android:textSize="12dp"
+		            android:textColor="#e9e9e9"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+		        <TextView 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="Votes"
+		            android:textSize="12dp"
+		            android:textColor="#e9e9e9"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+		        <TextView 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="Favorite"
+		            android:textSize="12dp"
+		            android:textColor="#e9e9e9"
+	            	android:singleLine="true"
+		            android:gravity="center"	/>
+			</LinearLayout>
+            <!-- 점수 및 조회수 텍스트 끝-->
+            			
+			<!-- 사진 설명 -->
+			<LinearLayout 
+			    android:orientation="vertical"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="10dp"	>
+		        <TextView
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="Description"
+		            android:textSize="16dp"
+		            android:textColor="#ffffff"
+		            android:textStyle="bold"	/>
+		        <TextView 
+		            android:id="@+id/detail_description"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="description"
+		            android:textSize="14dp"
+		            android:textColor="#e9e9e9"	/>
+			</LinearLayout>
+			<!-- 사진 설명 끝 -->
+			
+            <!-- 사진 정보 -->
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="30dp"
+	            android:text="Camera EXIF"
+	            android:textSize="16dp"
+	            android:textColor="#ffffff"
+	            android:textStyle="bold"	/>
+			<LinearLayout 
+			    android:orientation="horizontal"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	>
+				<!-- 사진 정보 제목 -->
+				<LinearLayout 
+				    android:orientation="vertical"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"	>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Camera"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Lens"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Focal_Length"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="ISO/Film"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Shutter_Speed"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Aperture"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Category"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Uploaded"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Taken"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="Copyright"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_weight="1"
+			            android:text="LicenseType"
+			            android:textSize="14dp"
+			            android:textColor="#ffffff"
+		            	android:singleLine="true"	/>
+				</LinearLayout>
+				<!-- 사진 정보 제목 끝 -->
+				
+				<!-- 사진 정보 -->
+				<LinearLayout 
+				    android:orientation="vertical"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:layout_marginLeft="5dp"	>
+			        <TextView 
+			            android:id="@+id/detail_camera"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Camera"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_lens"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Lens"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_focal_length"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Focal_Length"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_iso"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="ISO/Film"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_shutter_speed"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Shutter_Speed"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_aperture"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Aperture"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_category"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Category"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_uploaded"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Uploaded"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_taken"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Taken"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_copyright"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="Copyright"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+			        <TextView 
+			            android:id="@+id/detail_licenseType"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+			            android:layout_weight="1"
+			            android:text="LicenseType"
+			            android:textSize="14dp"
+			            android:textColor="#e9e9e9"
+			            android:textStyle="bold"
+		            	android:singleLine="true"	/>
+				</LinearLayout>				
+				<!-- 사진 정보 끝 -->
+				
+			</LinearLayout>
+			<!-- 사진 내용 끝 -->
+        </LinearLayout>
+    </ScrollView>
+    
+    <FrameLayout
+	    android:layout_width="60dp"
+		android:layout_height="40dp"
+		android:layout_gravity="bottom|left"	>
+	    <Button
+		    android:id="@+id/detail_info_share_btn"
+		    android:layout_width="60dp"
+			android:layout_height="40dp"
+			android:layout_gravity="bottom|left"
+			android:padding="5dp"
+			android:text="Share"
+			android:textSize="14dp"
+			android:textColor="#ffffff"
+			android:gravity="center"
+			android:background="@android:color/transparent" />
+	    
+		<ProgressBar
+		    android:id="@+id/share_progressbar"
+			style="?android:attr/progressBarStyleSmall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:visibility="gone" />
+    </FrameLayout>
+    
+    <FrameLayout
+	    android:layout_width="60dp"
+		android:layout_height="40dp"
+		android:layout_gravity="bottom|left"
+		android:layout_marginLeft="60dp"	>
+	    <Button
+		    android:id="@+id/detail_info_save_btn"
+		    android:layout_width="60dp"
+			android:layout_height="40dp"
+			android:layout_gravity="bottom|left"
+			android:padding="5dp"
+			android:text="Save"
+			android:textSize="14dp"
+			android:textColor="#ffffff"
+			android:gravity="center"
+			android:background="@android:color/transparent" />
+	    
+		<ProgressBar
+		    android:id="@+id/save_progressbar"
+			style="?android:attr/progressBarStyleSmall"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:visibility="gone" />
+    </FrameLayout>
+    
+	<Button
+	    android:id="@+id/detail_info_close_btn"
+	    android:layout_width="60dp"
+		android:layout_height="40dp"
+		android:layout_gravity="bottom|right"
+		android:padding="5dp"
+		android:text="Close"
+		android:textSize="14dp"
+		android:textColor="#ffffff"
+		android:gravity="center"
+		android:background="@android:color/transparent" />
+	
+	<ProgressBar
+	    android:id="@+id/info_progressbar"
+		style="?android:attr/progressBarStyleLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:visibility="gone" />
+</FrameLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">com500px</string>
+    <string name="caulyID">iXHWh30N</string>
+    <string name="adamID">1acfZ32T13471ad7b90</string>
+    <string name="admobID">a14ef633769b40c</string>
+    <string name="adlibID">4f824f0e0cf22cbca51ce563</string>
+    
+    <string-array name="photo_feature"	>
+        <item name="popular"				>popular</item>
+        <item name="editors"				>editors</item>
+        <item name="upcoming"				>upcoming</item>
+        <item name="fresh_today"			>fresh_today</item>
+        <item name="fresh_yesterday"		>fresh_yesterday</item>
+        <item name="fresh_week"				>fresh_week</item>
+    </string-array>
+    
+    <string-array name="photo_feature_2"	>
+        <item name="Popular"				>Popular</item>
+        <item name="Editors"				>Editors</item>
+        <item name="Upcoming"				>Upcoming</item>
+        <item name="Fresh Today"			>Fresh Today</item>
+        <item name="Fresh Yesterday"		>Fresh Yesterday</item>
+        <item name="Fresh Week"				>Fresh Week</item>
+    </string-array>
+    
+    <string-array name="photo_category_name"	>
+        <item name="All"					>All</item>
+        <item name="Abstract"				>Abstract</item>
+        <item name="Animals"				>Animals</item>
+        <item name="Black and White"		>Black and White</item>
+        <item name="Celebrities"			>Celebrities</item>
+        <item name="City and Architecture"	>City and Architecture</item>
+        <item name="Commercial"				>Commercial</item>
+        <item name="Concert"				>Concert</item>
+        <item name="Family"					>Family</item>
+        <item name="Fashion"				>Fashion</item>
+        <item name="Film"					>Film</item>
+        <item name="Fine Art"				>Fine Art</item>
+        <item name="Food"					>Food</item>
+        <item name="Journalism"				>Journalism</item>
+        <item name="Landscapes"				>Landscapes</item>
+        <item name="Macro"					>Macro</item>
+        <item name="Nature"					>Nature</item>
+        <item name="Nude"					>Nude</item>
+        <item name="People"					>People</item>
+        <item name="Performing Arts"		>Performing Arts</item>
+        <item name="Sport"					>Sport</item>
+        <item name="Still Life"				>Still Life</item>
+        <item name="Street"					>Street</item>
+        <item name="Transportation"			>Transportation</item>
+        <item name="Travel"					>Travel</item>
+        <item name="Underwater"				>Underwater</item>
+        <item name="Urban Exploration"		>Urban Exploration</item>
+        <item name="Wedding"				>Wedding</item>
+    </string-array>
+    
+    <integer-array name="photo_category_no"	>
+        <item name="All"					>0</item>
+        <item name="Abstract"				>10</item>
+        <item name="Animals"				>11</item>
+        <item name="Black and White"		>5</item>
+        <item name="Celebrities"			>1</item>
+        <item name="City and Architecture"	>9</item>
+        <item name="Commercial"				>15</item>
+        <item name="Concert"				>16</item>
+        <item name="Family"					>20</item>
+        <item name="Fashion"				>14</item>
+        <item name="Film"					>2</item>
+        <item name="Fine Art"				>24</item>
+        <item name="Food"					>23</item>
+        <item name="Journalism"				>3</item>
+        <item name="Landscapes"				>8</item>
+        <item name="Macro"					>12</item>
+        <item name="Nature"					>18</item>
+        <item name="Nude"					>4</item>
+        <item name="People"					>7</item>
+        <item name="Performing Arts"		>19</item>
+        <item name="Sport"					>17</item>
+        <item name="Still Life"				>6</item>
+        <item name="Street"					>21</item>
+        <item name="Transportation"			>26</item>
+        <item name="Travel"					>13</item>
+        <item name="Underwater"				>22</item>
+        <item name="Urban Exploration"		>27</item>
+        <item name="Wedding"				>25</item>
+    </integer-array>
+    
+    <string-array name="license_type"	>
+        <item name="0"	>Standard 500px License</item>
+        <item name="1"	>Creative Commons License Non Commercial Attribution</item>
+        <item name="2"	>Creative Commons License Non Commercial No Derivatives</item>
+        <item name="3"	>Creative Commons License Non Commercial Share Alike</item>
+        <item name="4"	>Creative Commons License Attribution</item>
+        <item name="5"	>Creative Commons License No Derivatives</item>
+        <item name="6"	>Creative Commons License Share Alike</item>
+	</string-array>
+</resources>
