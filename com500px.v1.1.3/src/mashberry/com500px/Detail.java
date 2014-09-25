@@ -449,7 +449,12 @@ public class Detail extends Activity {
 
 	private String getCategoryName(String str){
 		String name						= "";
-		int index						= Integer.parseInt(str);
+		int index						= 0;
+		
+		if(!str.equals("")){
+			index						= Integer.parseInt(str);
+		}
+		
 		ArrayList<String> tempNameArr	= new ArrayList<String>(Arrays.asList(Var.photoCategoryNameArr));
 		ArrayList<Integer> tempNoArr	= new ArrayList<Integer>();
 		
@@ -513,6 +518,5 @@ public class Detail extends Activity {
 	public void onBackPressed() {
 		finish();
 		RecycleUtils.recursiveRecycle(getWindow().getDecorView());
-		super.onBackPressed();
 	}
 }
