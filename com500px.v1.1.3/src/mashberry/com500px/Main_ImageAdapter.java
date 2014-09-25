@@ -23,10 +23,11 @@ public class Main_ImageAdapter extends BaseAdapter {
 	int space;
 	int width;
    
-	Main_ImageAdapter(Context context){
+	Main_ImageAdapter(Context context, int gridWidth){
 		imgLoader = new ImageLoader(context);
 		space = (int) context.getResources().getDimension(R.dimen.main_grid_space);
-		width = (Var.screenWidth - (space*Var.number_of_thumb_image)) / Var.number_of_thumb_image;
+//		width = (Var.screenWidth - (space*Var.number_of_thumb_image)) / Var.number_of_thumb_image;
+		width = (gridWidth - (space*Var.number_of_thumb_image)) / Var.number_of_thumb_image;
 	}
 	
     public int getCount() {
@@ -43,9 +44,9 @@ public class Main_ImageAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null){
-        	gridImageView = new GridView_FrameLayout(parent.getContext(), position);	// context 값을 뷰로 설정
+        	gridImageView = new GridView_FrameLayout(parent.getContext(), position);
             gridImageView.setLayoutParams(
-            		new GridView.LayoutParams(getViewWidth(), getViewHeight()));	// 이미지 크기 설정  (x, y)
+            		new GridView.LayoutParams(getViewWidth(), getViewHeight()));	// x, y
         } else {
             gridImageView = (GridView_FrameLayout)convertView;
         }
@@ -82,7 +83,7 @@ public class Main_ImageAdapter extends BaseAdapter {
     		inflater.inflate(R.layout.main_gridview, this, true);
 
     		mImage			= (ImageView) findViewById(R.id.image_view);
-    		mImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
+    		mImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
     		imgLoader.DisplayImage(Var.imageSmall_urlArr.get(position), mImage);
     		mIcon			= (ImageView) findViewById(R.id.image_pimg);
     		mIcon.setScaleType(ImageView.ScaleType.FIT_CENTER);

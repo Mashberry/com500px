@@ -75,7 +75,7 @@
 		
 		<GridView
 		 	android:id="@+id/sub_grid"
-			android:layout_width="match_parent" 
+			android:layout_width="wrap_content" 
 		    android:layout_height="wrap_content"
 		    android:layout_margin="15dp"
 		    android:layout_gravity="center_horizontal|top"
@@ -83,8 +83,6 @@
 		    android:numColumns="1"
 		    android:verticalSpacing="5dp"
 		    android:horizontalSpacing="10dp"
-		    android:gravity="center"
-		    android:stretchMode="columnWidth"
 		    android:background="#dd383838"
 		    android:visibility="gone"	/>
 	</FrameLayout>
@@ -93,5 +91,5 @@
     <com.mocoplex.adlib.AdlibAdViewContainer
         android:id="@+id/ads"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 </LinearLayout>

@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 
 import mashberry.com500px.DB;
 import mashberry.com500px.Main;
@@ -49,13 +50,13 @@ public class Api_Parser {
             if (response == HttpURLConnection.HTTP_OK) {
 				InputStream in			= httpConn.getInputStream();
                 String smallImageOpt	= "3";													// 비트맵으로 변환 시 옵션에 들어갈 숫자(8이면 1/8의 크기로 줄여줌)
-                String largeImageOpt	= "1";
+                String largeImageOpt	= "0";
                 String userPictureOpt	= "8";
 				String result			= convertStreamToString(in);
 				JSONObject jObject		= new JSONObject(result);
 				JSONArray jsonArray		= jObject.getJSONArray("photos");
 				Main.progressBar_process(75);
-
+				
 				if(jsonArray.length() == 0){
 					returnStr				= "no results";
 				}else{

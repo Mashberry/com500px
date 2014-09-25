@@ -25,9 +25,9 @@
         android:theme="@style/AppTheme"
         android:allowBackup="true" >
         <activity
-            android:name=".Main"
+            android:name="mashberry.com500px.Main"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="unspecified" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,7 +35,7 @@
         </activity>
         
         <activity
-            android:name=".Detail"
+            android:name="mashberry.com500px.Detail"
             android:configChanges="keyboardHidden|orientation"
             android:theme="@style/FullScreen" >
         </activity>

@@ -1,6 +1,7 @@
 package mashberry.com500px;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import mashberry.com500px.util.Api_Parser;
 import mashberry.com500px.util.ImageLoader;
@@ -16,6 +17,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.net.Uri;
@@ -24,6 +26,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Process;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -43,6 +46,7 @@ import com.mocoplex.adlib.AdlibConfig;
 import com.mocoplex.adlib.AdlibManager.AdlibVersionCheckingListener;
 
 public class Main extends AdlibActivity implements OnClickListener {
+	final String TAG	= getClass().getSimpleName();
 	Main mContext;
 	
 	ProgressDialog progressDialog;
@@ -63,7 +67,7 @@ public class Main extends AdlibActivity implements OnClickListener {
     int handlerNo			= 0;
     boolean notScroll		= false;
     
-    final int IMAGE_NO_FOR_PAGE = 21;
+    int IMAGE_NO_FOR_PAGE	= 21;
     	
 	/*******************************************************************************
      * 
@@ -75,8 +79,23 @@ public class Main extends AdlibActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		mContext	= this;
+		
+		Log.i(TAG, "onCreate");
     	
-		getScreenSize();
+		getScreenSize(getResources().getConfiguration().orientation);
+		
+		Var.categoryArr				= new ArrayList<String>();
+		Var.idArr					= new ArrayList<String>();
+		Var.imageSmall_urlArr		= new ArrayList<String>();
+		Var.imageLarge_urlArr		= new ArrayList<String>();
+		Var.nameArr					= new ArrayList<String>();
+		Var.ratingArr				= new ArrayList<String>();
+		Var.user_firstnameArr		= new ArrayList<String>();
+		Var.user_fullnameArr		= new ArrayList<String>();
+		Var.user_lastnameArr		= new ArrayList<String>();
+		Var.user_upgrade_statusArr	= new ArrayList<String>();
+		Var.user_usernameArr		= new ArrayList<String>();
+		Var.user_userpic_urlArr		= new ArrayList<String>();
 		
 		Var.progressBar	= (ProgressBar)findViewById(R.id.progressBar);
 		Var.progressBar.setMax(DB.progressMax);
@@ -157,6 +176,8 @@ public class Main extends AdlibActivity implements OnClickListener {
 		Var.photoCategoryNameArr	= getResources().getStringArray(R.array.photo_category_name);
 		Var.photoCategoryNoArr		= getResources().getIntArray(R.array.photo_category_no);
 		
+		Var.Get_Photo_Category		= new HashMap<Integer, String>();
+		
 		for(int i=0 ; i<Var.photoCategoryNameArr.length ; i++){
 			Var.Get_Photo_Category.put(Var.photoCategoryNoArr[i], Var.photoCategoryNameArr[i]);
 		}
@@ -186,10 +207,10 @@ public class Main extends AdlibActivity implements OnClickListener {
 	 ******************************************************************************/
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 	@SuppressWarnings({ "deprecation" })
-	void getScreenSize(){
+	void getScreenSize(int cofig){
 		Var.screen	= getWindowManager().getDefaultDisplay();
 		Point size	= new Point();
-
+		
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
 			Var.screen.getSize(size);
 			
@@ -200,13 +221,35 @@ public class Main extends AdlibActivity implements OnClickListener {
 			Var.screenHeight	= Var.screen.getHeight();
 		}
 		
-		if(Var.screenHeight < 1024) {
-			Var.number_of_thumb_image = 2;
-		}else if(Var.screenHeight >= 1024) {
-			Var.number_of_thumb_image = 3;
-		}else if(Var.screenHeight >= 1920) {
-			Var.number_of_thumb_image = 4;
+		if(cofig == Configuration.ORIENTATION_LANDSCAPE){
+//			Log.i(TAG, "Configuration.ORIENTATION_LANDSCAPE");
+			if(Var.screenWidth < 1024) {
+				Var.number_of_thumb_image = 3;
+			}else if(Var.screenWidth <= 1920) {
+				Var.number_of_thumb_image = 4;
+			}else if(Var.screenWidth <= 2560) {
+				Var.number_of_thumb_image = 5;
+			}else if(Var.screenWidth > 2560) {
+				Var.number_of_thumb_image = 6;
+			}
+		}else{
+//			Log.i(TAG, "Configuration.ORIENTATION_PORTRAIT");
+			if(Var.screenHeight < 1024) {
+				Var.number_of_thumb_image = 2;
+			}else if(Var.screenHeight <= 1920) {
+				Var.number_of_thumb_image = 3;
+			}else if(Var.screenHeight <= 2560) {
+				Var.number_of_thumb_image = 4;
+			}else if(Var.screenHeight > 2560) {
+				Var.number_of_thumb_image = 5;
+			}
 		}
+		
+		IMAGE_NO_FOR_PAGE	= Var.number_of_thumb_image * 7;
+		
+//		Log.i(TAG, "Var.screenWidth " + Var.screenWidth);
+//		Log.i(TAG, "Var.screenHeight " + Var.screenHeight);
+//		Log.i(TAG, "Var.number_of_thumb_image " + Var.number_of_thumb_image);
 	}
 	
 	/*******************************************************************************
@@ -303,9 +346,9 @@ public class Main extends AdlibActivity implements OnClickListener {
 			
 			if(msg.what == 0){
 				main_gridview.setNumColumns(Var.number_of_thumb_image);
-				main_gridview.setAdapter(new Main_ImageAdapter(mContext));
+				main_gridview.setAdapter(new Main_ImageAdapter(mContext, main_gridview.getWidth()));
 			}else if(msg.what == 1){
-				new Main_ImageAdapter(mContext);
+				new Main_ImageAdapter(mContext, main_gridview.getWidth());
 			}
 			
 			progressBar_process(100);
@@ -429,7 +472,7 @@ public class Main extends AdlibActivity implements OnClickListener {
 					setMainInit(featureNo, categoryNo, pageNo, handlerNo);
 				}else{
 					int position	= main_gridview.getFirstVisiblePosition();
-					main_gridview.setAdapter(new Main_ImageAdapter(mContext));
+					main_gridview.setAdapter(new Main_ImageAdapter(mContext, main_gridview.getWidth()));
 					main_gridview.setSelection(position);
 				}
 			}else if(Var.imageSmall_urlArr.size() == 0){
@@ -467,6 +510,23 @@ public class Main extends AdlibActivity implements OnClickListener {
 				}
 			}
 		}
+	}
+
+	/*******************************************************************************
+     * 
+     * 상태 변환할 때
+     * 
+     *******************************************************************************/
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+	    
+	    // Checks the orientation of the screen
+	    if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+		    getScreenSize(newConfig.orientation);
+	    } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+		    getScreenSize(newConfig.orientation);
+	    }
 	}
 	
 	/*******************************************************************************

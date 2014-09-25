@@ -26,7 +26,7 @@ public class Main_CategoryAdapter extends BaseAdapter {
         	gridTextView.setTextSize(20);
         	gridTextView.setGravity(Gravity.CENTER_VERTICAL);
             gridTextView.setLayoutParams(new GridView.LayoutParams(
-            				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));	// 이미지 크기 설정  (x, y)
+            				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));	// 이미지 크기 설정  (x, y)
             gridTextView.setPadding(Var.category_text_padding, Var.category_text_padding, Var.category_text_padding, Var.category_text_padding);
         } else {
             gridTextView = (TextView)convertView;
